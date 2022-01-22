@@ -1,0 +1,1 @@
+### [Fields and methods in enum - Robot control](https://hyperskill.org/learn/step/11522#solutions)
