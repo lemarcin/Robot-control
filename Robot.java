@@ -1,9 +1,41 @@
+
 class Move {
     public static void moveRobot(Robot robot, int toX, int toY) {
-        robot.stepForward(); // your implementation here
+
+        int noStepsX = toX - robot.getX();
+        int noStepsY = toY - robot.getY();
+        if (noStepsX > 0) {
+            while (Direction.RIGHT != robot.getDirection()) {
+                robot.turnRight();
+            }
+            for (int i = 0; i < Math.abs(noStepsX); i++) {
+                robot.stepForward();
+            }
+        } else if (noStepsX < 0) {
+            while (Direction.LEFT != robot.getDirection()) {
+                robot.turnRight();
+            }
+            for (int i = 0; i < Math.abs(noStepsX); i++) {
+                robot.stepForward();
+            }
+        }
+        if (noStepsY > 0) {
+            while (Direction.UP != robot.getDirection()) {
+                robot.turnRight();
+            }
+            for (int i = 0; i < Math.abs(noStepsY); i++) {
+                robot.stepForward();
+            }
+        } else if (noStepsY < 0) {
+            while (Direction.DOWN != robot.getDirection()) {
+                robot.turnRight();
+            }
+            for (int i = 0; i < Math.abs(noStepsY); i++) {
+                robot.stepForward();
+            }
+        }
     }
 }
-
 //Don't change code below
 
 enum Direction {
